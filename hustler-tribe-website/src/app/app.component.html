@@ -1,0 +1,81 @@
+<section id="hero-video">
+    <div class="top-logo">
+        <img src="assets/logo.png">
+    </div>
+    <div *ngIf="!isMobile; else mobileBackground">
+        <video autoplay loop muted playsinline>
+            <source src="assets/hustlertribes.mp4" type="video/mp4">
+        </video>
+    </div>
+    <ng-template #mobileBackground>
+        <div class="image" style="background: url('assets/placeholder.jpg'); background-size: cover; height:100%;">
+        </div>
+    </ng-template>
+
+    <div class="video-overlay">
+        <div class="video-text-overlay">
+            <div class="inner-container">
+                <h1>stay at<br>like-minded<br>entrepreneurs<br>for free!</h1>
+                <div class="center-button">
+                    <button (click)="scroll('second-part')" class="tell-me-why" mat-raised-button color="primary">Request access!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="second-part">
+        <div *ngIf="!submitted; else submittedContent">
+            <div class="form-wrapper">
+                <form #userForm="ngForm" (ngSubmit)="signup(userForm.value)" class="form" novalidate>
+                    <mat-form-field class="example-full-width">
+                        <input matInput name="email" required placeholder="Email" value="your@email.com" ngModel>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput name="refcode" placeholder="Referral Code" value="REFCODE" ngModel>
+                    </mat-form-field>
+                    <mat-checkbox name="newsletter" color="primary" ngModel><span style="color: white; margin-top: 30px;">I want to receive news from Hustlertribes!</span></mat-checkbox>
+                    <mat-checkbox required name="privacypolicy" color="primary" ngModel><span style="color:red;">*</span>
+                        <span style="color: white; margin-top: 20px"> I agree with the 
+                            <a href="https://www.iubenda.com/privacy-policy/34548229" target="_blank" class="iubenda-white iubenda-embed" title="Privacy Policy " class="privacy-url">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+                            <br *ngIf="isMobile"> and
+                            <a href="https://www.iubenda.com/privacy-policy/34548229/cookie-policy" target="_blank" class="iubenda-white iubenda-embed" title="Cookie Policy" class="privacy-url">Cookie Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+                            !
+                        </span>
+                    </mat-checkbox>
+                    <button class="request access" mat-raised-button color="primary" type="submit" style="margin-top: 20px;">Request access!</button>
+                    <h1 *ngIf="!formCompleted">Please fill all the required fields (<span style="color: red;">*</span>)</h1>
+                </form>
+            </div>
+        </div>
+        <ng-template #submittedContent>
+            <div class="success">
+                <div class="checkmark-container">
+                    <img src="assets/bluecheck.png">
+                </div>
+                <div class="successfull-register">
+                    You are awesome! Now go check your email.
+                </div>
+            </div>
+        </ng-template>
+        <div class="form-outer-container">
+            <div class="form-container">
+                <h2>Offer your couch to an entrepreneur</h2>
+                <h2 style="margin-top: 20px;">Or crash on an entrepreneur's couch</h2>
+                <h2 style="margin-top: 20px;">Meet like-minded hustlers</h2>
+                <h2 style="margin-top: 20px;">Save on accomodation costs</h2>
+            </div>
+        </div>
+    </section>
+    <div class="slogan">
+        <h1>BECOME PART OF THE TRIBE!</h1>
+    </div>
+    <script>
+      var scrollTo = function(){
+            $('html,body').animate({
+                scrollTop: $('second-part').offset().top
+            }, 600);
+        }
+    </script>
+</section>
+
+<router-outlet></router-outlet>

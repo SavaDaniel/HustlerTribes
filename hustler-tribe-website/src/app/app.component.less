@@ -1,0 +1,195 @@
+@import (css) url('https://fonts.googleapis.com/css?family=Arimo&display=swap');
+
+#hero-video {
+	height: 100vh;
+}
+
+#hero-video  video{
+    width: 100vw;
+    height: 56.25vw;
+}
+
+.video-overlay {
+	background-color: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 56.25vw;
+    position: absolute;
+    top: 0;
+    left: 0px;
+}
+
+.video-text-overlay {
+	color: white;
+	position: absolute;
+    padding-left: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.video-text-overlay h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: 'Arimo';
+    text-transform: uppercase;
+    line-height: 85px;
+    margin-bottom: 40px;
+    margin-top: 0px;
+}
+
+.tell-me-why {
+    width: 250px;
+    height: 50px;
+}
+
+.top-logo {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    // background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.top-logo img {
+    width: 250px;
+}
+
+#second-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+    width: 100%;
+    height: 100%;
+}
+
+.form-container {
+    width: 100%;
+    text-align: right;
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+
+.form-container h2 {
+    font-size: 1.8rem;
+    font-family: 'Arimo';
+}
+
+.form-wrapper {
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 5%;
+}
+
+.form-outer-container {
+    width: 50%;
+    padding-right: 5%;
+}
+
+.form {
+    width:400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.slogan {
+    margin-top: -80px;
+    width: 100%;
+    text-align: center;
+    color: #3E51B5;
+    font-family: 'Arimo';
+}
+.privacy-url {
+    text-decoration: none;
+    color: red;
+}
+
+.success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.checkmark-container img {
+    width: 80px;
+}
+
+@media screen and (max-width: 1070px) {
+    .form-container h2 {
+        font-size: 1.6rem !important;
+    }
+    .video-text-overlay h1 {
+        font-size: 4rem !important;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .form-container h2 {
+        font-size: 1.4rem !important;
+    }
+    .video-text-overlay h1 {
+        font-size: 2.8rem !important;
+        line-height: 55px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #second-part {
+        flex-wrap: wrap-reverse;
+    }
+
+    .form-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-wrapper {
+        width: 100% !important;
+        margin-top: -80px;
+        padding-left: 0;
+    }
+
+    .form-outer-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .video-overlay {
+        height: 100% !important;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .video-text-overlay h1 {
+        font-size: 2.3rem !important;
+        line-height: 40px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .video-text-overlay h1 {
+        font-size: 1.8rem !important;
+        line-height: 30px;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .form-container h2 {
+        font-size: 1.2rem !important;
+    }
+
+    .form-wrapper {
+        width: 310px !important;
+    }
+
+    .form {
+        width: 310px !important;
+    }
+}
